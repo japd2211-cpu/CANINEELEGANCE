@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Canine Elegance</title>
+<style>
+  :root {
+    --pink: #f4dce6;
+    --silver: #a8aab3;
+    --dark: #19191c;
+    --white: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; background: var(--pink); color: var(--dark); font-family: "Georgia", serif; }
+  .wrap {
+    min-height: 100dvh;
+    display:flex; align-items:center; justify-content:center;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .wrap::before, .wrap::after {
+    content:""; position:absolute; width:50vmin; height:50vmin; border: 1px solid rgba(168,170,179,0.35);
+    border-radius: 32px; transform: rotate(15deg);
+    pointer-events:none; filter: blur(0.2px);
+  }
+  .wrap::before { top:-12vmin; left:-8vmin; }
+  .wrap::after { bottom:-12vmin; right:-8vmin; }
+
+  .card {
+    width: min(720px, 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55));
+    border: 1px solid rgba(168,170,179,0.35);
+    border-radius: 24px;
+    padding: 32px 28px 36px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    opacity: 0; transform: translateY(10px);
+    animation: fadeIn 900ms ease forwards 150ms;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::after {
+    content:""; position:absolute; inset:-30%;
+    background: linear-gradient(120deg, rgba(255,255,255,0), rgba(255,255,255,0.60), rgba(255,255,255,0));
+    transform: translateX(-120%);
+    animation: shimmer 2.4s ease-in-out 400ms both;
+  }
+  @keyframes fadeIn { to { opacity:1; transform:none; } }
+  @keyframes shimmer {
+    0% { transform: translateX(-120%) rotate(8deg); }
+    100% { transform: translateX(120%) rotate(8deg); }
+  }
+
+  .logo { text-align:center; margin: 8px 0 10px; }
+  .logo img { height: 84px; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.08)); }
+  .brand { text-align:center; font-size: clamp(28px, 5vw, 40px); letter-spacing: 0.5px; }
+  .subtitle { text-align:center; color: var(--silver); margin-top: 6px; font-size: clamp(14px, 3.2vw, 18px); }
+
+  .buttons { display:grid; gap:14px; margin: 26px auto 6px; width:min(520px, 100%); }
+  .btn {
+    display:block; padding:14px 18px; text-align:center; text-decoration:none; color: var(--dark);
+    background: rgba(255,255,255,0.85);
+    border:1px solid rgba(168,170,179,0.6);
+    border-radius: 14px;
+    transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); background: rgba(255,255,255,0.95); }
+
+  .fine { margin-top: 18px; text-align:center; font-size: 12px; color: rgba(25,25,28,0.55); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="logo">
+        <img src="CE.png">
+      </div>
+      <div class="brand">Canine Elegance</div>
+      <div class="subtitle"><em>Because Every Dog Deserves Elegance</em></div>
+
+      <div class="buttons">
+        <a class="btn" href="https://instagram.com/canineelegance_" target="_blank" rel="noopener">🌸 Instagram</a>
+        <a class="btn" href="https://wa.me/17873947404" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="btn" href="https://www.facebook.com/canineelegance0/" target="_blank" rel="noopener">🩶 Facebook</a>
+        <a class="btn" href="https://canineelegance.com/" target="_blank" rel="noopener"> 🌐 Website</a>
+      </div>
+
+      <div class="fine">© Canine Elegance</div>
+    </div>
+  </div>
+</body>
+</html>
